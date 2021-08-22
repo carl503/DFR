@@ -1,5 +1,4 @@
 from typing import Final
-from torrentool.api import Torrent
 import libtorrent as lt
 import os
 import shutil
@@ -29,7 +28,7 @@ def delete_files(files):
     for file in files:
         if os.path.exists(file):
             os.remove(file)
-        print(f"Deleting file: {file} permanently")  
+            print(f"Deleting file: {file} permanently")  
 
 def get_file_size(torrents):
     size = 0
