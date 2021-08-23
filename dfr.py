@@ -41,7 +41,7 @@ def get_all_torrent_folders():
             try:
                 torrent_info = lt.torrent_info(torrent_file)
                 location = [loc for count, path in enumerate(LABELS) if (os.path.exists(loc := join(DOWNLOAD_PATH, LABELS[count], torrent_info.name())))]
-                if len(location) == 1: torrent_folders.add(location[0])
+                if len(location): torrent_folders.add(location[0])
             except RuntimeError:
                 print(f"An error occured while trying to read torrent {torrent_file}")
 
